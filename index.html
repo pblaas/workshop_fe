@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.6.2.js"></script>
+<style type="text/css">
+  .fadeIn {
+    display: none;
+  }
+  #circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+</style>
+
+<title>demo</title>
+
+<script type='text/javascript'>
+
+jQuery.ajaxSetup({ cache: false });
+
+color = 'white';
+//url = 'http://server2.mtdb.nl/demo/color.html'+'?'+Math.random()*Math.random()
+//url = 'https://demo.services.proserve.nl/color.html'
+url = '/colorservice/color.html'
+
+setInterval(function(){
+      $('#test').load('test.php');
+ },5000);
+
+//$(window).load(function(){
+setInterval(function(){
+(function fadeInDiv() {
+  var divs = $('.fadeIn');
+  var divsize = ((Math.random() * 100) + 50).toFixed();
+  var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+  var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+  var maxSize = 9;
+  var minSize = 3;
+  var size = (Math.random() * maxSize + minSize)
+
+  var elem = divs.eq(Math.floor(Math.random() * divs.length));
+
+  if (!elem.is(':visible')) {
+
+    $.get(url, function(data){
+      color = data;
+    });
+
+    elem.fadeIn(Math.floor(Math.random() * 500), fadeInDiv);
+    $.get(url, function(data){
+      color = data;
+    });
+    elem.css({
+      'position': 'absolute',
+      'left': posx + 'px',
+      'top': posy + 'px',
+      'font-size': size + 'px',
+      'background': color
+    });
+  } else {
+    elem.fadeOut(Math.floor(Math.random() * 500), fadeInDiv);
+  }
+})();
+}, 1000);
+
+</script>
+</head>
+
+<body>
+  <div class="fadeIn" id="circle"></div>
+  <div class="fadeIn" id="circle"></div>
+  <div class="fadeIn" id="circle"></div>
+  <div class="fadeIn" id="circle"></div>
+  <div class="fadeIn" id="circle"></div>
+  <div class="fadeIn" id="circle"></div>
+  <div class="fadeIn" id="circle"></div>
+  <div class="fadeIn" id="circle"></div>
+
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "gbjwt72y"
+    }], "*")
+  };
+  </script>
+
+</body>
+</html>
+
