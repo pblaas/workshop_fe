@@ -7,8 +7,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 2 
-      maxUnavailable: 1 
+      maxSurge: 4 
+      maxUnavailable: 2 
   minReadySeconds: 5  
   template:
     metadata:
