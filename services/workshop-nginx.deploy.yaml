@@ -4,6 +4,12 @@ metadata:
   name: workshopnginx
 spec:
   replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 5 
+      maxUnavailable: 2 
+  minReadySeconds: 5  
   template:
     metadata:
       labels:
