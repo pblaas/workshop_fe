@@ -2,6 +2,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: workshop-nginx 
+  labels:
+    tier: demoapp
 spec:
   selector:
     app: workshopnginx 
