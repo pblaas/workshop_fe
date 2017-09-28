@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: workshop_colorservice
+spec:
+  selector:
+    app: workshop_colorservice
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

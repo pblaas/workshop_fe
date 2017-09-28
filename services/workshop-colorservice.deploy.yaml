@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: workshop-colorservice
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: workshop_colorservice
+    spec:
+      containers:
+      - name: workshop_colorservice
+        image: pblaas/workshop_colorservice:initial
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
+          limits:
+            cpu: "150m"
+            memory: "128Mi"
+        ports:
+        - containerPort: 80

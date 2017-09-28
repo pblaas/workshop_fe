@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: workshop_nginx 
+spec:
+  selector:
+    app: workshop_nginx 
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

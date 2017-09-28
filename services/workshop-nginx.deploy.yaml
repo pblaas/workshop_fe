@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: workshop-nginx
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: workshop_nginx
+    spec:
+      containers:
+      - name: workshop_nginx
+        image: pblaas/workshop_nginx:initial
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
+          limits:
+            cpu: "150m"
+            memory: "128Mi"
+        ports:
+        - containerPort: 80
