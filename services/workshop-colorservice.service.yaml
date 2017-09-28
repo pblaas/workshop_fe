@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: workshop_colorservice
+  name: workshop-colorservice
 spec:
   selector:
-    app: workshop_colorservice
+    app: workshopcolorservice
   ports:
     - protocol: TCP
       port: 80

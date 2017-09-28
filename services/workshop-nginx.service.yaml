@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: workshop_nginx 
+  name: workshop-nginx 
 spec:
   selector:
-    app: workshop_nginx 
+    app: workshopnginx 
   ports:
     - protocol: TCP
       port: 80

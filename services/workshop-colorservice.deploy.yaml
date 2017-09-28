@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: workshop-colorservice
+  name: workshopcolorservice
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: workshop_colorservice
+        app: workshopcolorservice
     spec:
       containers:
-      - name: workshop_colorservice
+      - name: workshopcolorservice
         image: pblaas/workshop_colorservice:initial
         resources:
           requests:

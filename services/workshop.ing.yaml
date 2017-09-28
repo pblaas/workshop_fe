@@ -9,9 +9,9 @@ spec:
        paths:
          - path: /
            backend:
-             serviceName: workshop_nginx 
+             serviceName: workshop-nginx 
              servicePort: 80
          - path: /colorservice
            backend:
-             serviceName: workshop_colorservice
+             serviceName: workshop-colorservice
              servicePort: 80

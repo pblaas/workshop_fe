@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: workshop-nginx
+  name: workshopnginx
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: workshop_nginx
+        app: workshopnginx
     spec:
       containers:
-      - name: workshop_nginx
+      - name: workshopnginx
         image: pblaas/workshop_nginx:initial
         resources:
           requests:
