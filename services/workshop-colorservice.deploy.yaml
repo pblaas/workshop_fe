@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: workshopcolorservice
 spec:
-  replicas: 20
+  replicas: 5 
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 4 
-      maxUnavailable: 2 
+      maxUnavailable: 3 
   minReadySeconds: 5  
   template:
     metadata:
