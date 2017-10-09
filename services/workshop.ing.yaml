@@ -6,7 +6,7 @@ metadata:
    tier: demoapp
 spec:
  rules:
-   - host: workshop.k8s.proserve.nl
+   - host: workshop.k8sdemo.cloudvps.com
      http:
        paths:
          - path: /
